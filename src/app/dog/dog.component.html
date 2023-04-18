@@ -4,19 +4,21 @@
   </div>
   <div class="row m-3">
     <div class="col">
-      <img src="https://images.dog.ceo/breeds/dane-great/n02109047_5331.jpg"
+      <img [src]="dog.message"
         width="200px"
         class="shadow rounded">
     </div>
   </div>
   <div class="row m-3">
     <div class="col">
-      "raça"
+      <span *ngFor="let name of getName()">
+        {{name | titlecase}}
+      </span>
     </div>
   </div>
   <div class="row m-3">
     <div class="col">
-      <button class="btn btn-primary">
+      <button class="btn btn-primary" (click)="loadDog()">
         Novo Dog
       </button>
     </div>
